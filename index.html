@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalina Urízar Kleinknecht</title>
+  <meta name="description" content="Developer, data scientist, and computational scientist based in Chile." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #0E0E0E;
+      --ink-soft: #5A5A5A;
+      --paper:    #F7F5F1;
+      --accent:   #C0392B;
+      --rule:     #E0DDD8;
+      --mono:     'DM Mono', monospace;
+      --serif:    'Cormorant Garamond', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── GRID LAYOUT ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 40px;
+    }
+
+    .name {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+
+    .name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .roles {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--ink-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 2;
+      text-align: right;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink);
+      max-width: 680px;
+    }
+
+    .about-text strong {
+      font-weight: 600;
+    }
+
+    /* ── PROJECTS ── */
+    .project {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 24px;
+      padding: 32px 0;
+      border-top: 1px solid var(--rule);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity .2s;
+    }
+
+    .project:first-of-type { border-top: none; padding-top: 0; }
+    .project:hover { opacity: 0.7; }
+
+    .project-meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+    }
+
+    .project-name {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .project-arrow {
+      font-size: 28px;
+      color: var(--accent);
+      line-height: 1;
+      margin-top: 6px;
+      transition: transform .2s;
+    }
+
+    .project:hover .project-arrow {
+      transform: translate(4px, -4px);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      border: 1px solid var(--rule);
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 300;
+    }
+
+    .contact-line a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s;
+    }
+
+    .contact-line a:hover { border-bottom-color: var(--accent); }
+
+    .contact-divider {
+      color: var(--rule);
+      font-weight: 300;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    footer a {
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    header .name    { transition-delay: 0s; }
+    header .roles   { transition-delay: .1s; }
+    section.about   { transition-delay: .15s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .page { padding: 0 24px; }
+      header { grid-template-columns: 1fr; gap: 20px; }
+      .roles { text-align: left; }
+      .project { grid-template-columns: 1fr; }
+      .project-arrow { display: none; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <h1 class="name reveal">
+      Catalina<br>
+      <em>Urízar</em> Kleinknecht
+    </h1>
+    <div class="roles reveal">
+      Developer<br>
+      Data Scientist<br>
+      Computational Scientist<br>
+      Full-Stack
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about reveal">
+    <div class="section-label">About</div>
+    <p class="about-text">
+      I build tools that make complex work <strong>simpler</strong>.
+      My background spans data science, computational methods, and full-stack development —
+      with a particular interest in automating the tedious parts of professional workflows
+      so people can focus on what actually matters.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="reveal">
+    <div class="section-label">Projects</div>
+
+    <a class="project" href="https://catalina-urizar-kleinknecht.github.io/ojv-agil" target="_blank">
+      <div>
+        <div class="project-meta">2025 &mdash; Desktop App</div>
+        <div class="project-name">OJV Ágil</div>
+        <p class="project-desc">
+          A desktop automation tool for Chilean legal professionals.
+          Searches hundreds of RUTs on the Oficina Judicial Virtual in minutes,
+          exports results to Excel, and highlights new cases since the last run.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Playwright</span>
+          <span class="tag">CustomTkinter</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Windows</span>
+        </div>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section class="reveal">
+    <div class="section-label">Contact</div>
+    <div class="contact-line">
+      <a href="mailto:catalina.urizark.@gmail.com">catalina.urizark.@gmail.com</a>
+      <span class="contact-divider">/</span>
+      <a href="https://github.com/catalina-urizar-kleinknecht" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Catalina Urízar Kleinknecht &copy; 2025</p>
+    <p>Santiago, Chile</p>
+  </footer>
+
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
