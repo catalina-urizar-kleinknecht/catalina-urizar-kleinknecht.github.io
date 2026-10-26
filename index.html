@@ -14,6 +14,7 @@
 header{padding:80px 0 60px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}.name{font-size:clamp(36px,6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05}.name em{font-style:italic;color:var(--accent)}.roles{font-family:var(--mono);font-size:11px;font-weight:300;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;line-height:2;text-align:right}
 section{padding:60px 0;border-bottom:1px solid var(--rule)}section:last-of-type{border-bottom:none}.section-label{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}.about-text{font-size:clamp(18px,2.5vw,24px);font-weight:300;line-height:1.7;color:var(--ink);max-width:680px;margin:0}.about-text+.about-text{margin-top:24px}.about-text strong{font-weight:600}
 .project{display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;padding:32px 0;border-top:1px solid var(--rule);text-decoration:none;color:inherit;transition:opacity .2s}.project:first-of-type{border-top:none;padding-top:0}a.project:hover{opacity:.7}.project-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}.project-name{font-size:clamp(22px,3vw,32px);font-weight:400;letter-spacing:-.01em;margin-bottom:10px}.project-desc{font-size:16px;font-weight:300;color:var(--ink-soft);line-height:1.6;max-width:600px;margin:0}.project-desc+.project-desc{margin-top:10px}.project-arrow{font-size:28px;color:var(--accent);line-height:1;margin-top:6px;transition:transform .2s}a.project:hover .project-arrow{transform:translate(4px,-4px)}.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule);padding:3px 10px;border-radius:2px}
+.project-media{display:block;width:100%;max-width:600px;height:auto;margin-top:18px;border:1px solid var(--rule);border-radius:2px;background:#fff}
 .job{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:24px 0;border-top:1px solid var(--rule)}.job:first-of-type{border-top:none;padding-top:0}.job-title{font-size:clamp(20px,2.6vw,26px);font-weight:400}.job-org{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}.job-date{font-family:var(--mono);font-size:11px;color:var(--ink-soft);text-align:right;white-space:nowrap}.job .project-desc{grid-column:1/-1}
 .contact-line{display:flex;align-items:center;gap:16px;font-size:clamp(18px,2.5vw,26px);font-weight:300;flex-wrap:wrap}.contact-line a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}.contact-line a:hover{border-bottom-color:var(--accent)}.contact-divider{color:var(--rule);font-weight:300}
 footer{padding:40px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--rule)}footer p{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:0}footer a{color:var(--ink-soft);text-decoration:none}footer a:hover{color:var(--accent)}
@@ -35,11 +36,21 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 <div class="section-label">01 — Profile</div>
 <p class="about-text">I’m a <strong>software engineer</strong> with a background in <strong>Computational Engineering Science</strong> (B.Sc. RWTH Aachen, thesis graded 1.0) and 8 years of hands-on Python development alongside my studies.</p>
 <p class="about-text">My work sits at the intersection of <strong>simulation of physical systems, data engineering, backend development and systems integration</strong>. I enjoy taking complex, heterogeneous problems from initial analysis through implementation, validation and long-term maintenance, and building tools that other people can run without me.</p>
-<p class="about-text">I’m particularly comfortable where requirements are incomplete, systems are heterogeneous, and the solution has to work reliably inside an existing operational workflow.</p>
+<p class="about-text">I’m particularly comfortable when there is a <strong>problem to solve</strong> and the task demands decisions to be made: about architecture, about performance, or about working within limited space or time.</p>
 </section>
 
 <section class="reveal">
 <div class="section-label">02 — Simulation &amp; Scientific Computing</div>
+
+<a class="project" href="https://github.com/catalina-urizar-kleinknecht/orbit-propagation" target="_blank" rel="noopener noreferrer">
+<div>
+<div class="project-meta">2026 — Orbital Mechanics · Numerical Methods</div>
+<div class="project-name">Orbit Propagation</div>
+<p class="project-desc">Two-body orbit propagation in Python with Euler, RK2 and RK4 implemented from scratch and compared with SciPy’s adaptive solvers (RK45, DOP853). Measures convergence orders against the exact solution, energy drift and accuracy versus computational cost, with the full derivation of the physics and the methods in the README.</p>
+<img class="project-media" src="https://raw.githubusercontent.com/catalina-urizar-kleinknecht/orbit-propagation/main/figures/orbits_energy.gif" alt="Animated comparison of Euler, RK2 and RK4: Euler spirals outwards and gains energy, RK4 stays on the orbit" loading="lazy">
+<div class="project-tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">Runge–Kutta</span><span class="tag">Orbital mechanics</span><span class="tag">Matplotlib</span></div>
+</div><div class="project-arrow">↗</div>
+</a>
 
 <div class="project"><div>
 <div class="project-meta">B.Sc. Thesis · RWTH Aachen · Graded 1.0</div>
