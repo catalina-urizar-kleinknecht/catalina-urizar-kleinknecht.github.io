@@ -1,115 +1,140 @@
-html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Catalina Urizar — Data & ML Engineer focused on backend systems, data infrastructure, machine learning, and systems integration.">
-<title>Catalina Urizar — Data & ML Engineer</title>
+<meta name="description" content="Catalina Urízar Kleinknecht — Software Engineer working on simulation, scientific computing, data systems and automation. Python, C++, SQL.">
+<title>Catalina Urízar Kleinknecht — Software Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0E0E0E;--ink-soft:#5A5A5A;--paper:#F7F5F1;--accent:#C0392B;--rule:#E0DDD8;--mono:'DM Mono',monospace;--serif:'Cormorant Garamond',Georgia,serif}
+:root{--ink:#0E0E0E;--ink-soft:#5A5A5A;--paper:#F7F5F1;--accent:#C0392B;--rule:#E0DDD8;--mono:'DM Mono',ui-monospace,monospace;--serif:'Cormorant Garamond',Georgia,serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;min-height:100vh}a{color:inherit}.page{max-width:900px;margin:0 auto;padding:0 40px}
 header{padding:80px 0 60px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}.name{font-size:clamp(36px,6vw,64px);font-weight:300;letter-spacing:-.02em;line-height:1.05}.name em{font-style:italic;color:var(--accent)}.roles{font-family:var(--mono);font-size:11px;font-weight:300;color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;line-height:2;text-align:right}
-section{padding:60px 0;border-bottom:1px solid var(--rule)}section:last-child{border-bottom:none}.section-label{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}.about-text{font-size:clamp(18px,2.5vw,24px);font-weight:300;line-height:1.7;color:var(--ink);max-width:680px;margin:0}.about-text+.about-text{margin-top:24px}.about-text strong{font-weight:600}
-.project{display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;padding:32px 0;border-top:1px solid var(--rule);text-decoration:none;color:inherit;transition:opacity .2s}.project:first-of-type{border-top:none;padding-top:0}.project:hover{opacity:.7}.project-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}.project-name{font-size:clamp(22px,3vw,32px);font-weight:400;letter-spacing:-.01em;margin-bottom:10px}.project-desc{font-size:16px;font-weight:300;color:var(--ink-soft);line-height:1.6;max-width:560px;margin:0}.project-arrow{font-size:28px;color:var(--accent);line-height:1;margin-top:6px;transition:transform .2s}.project:hover .project-arrow{transform:translate(4px,-4px)}.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule);padding:3px 10px;border-radius:2px}
+section{padding:60px 0;border-bottom:1px solid var(--rule)}section:last-of-type{border-bottom:none}.section-label{font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}.about-text{font-size:clamp(18px,2.5vw,24px);font-weight:300;line-height:1.7;color:var(--ink);max-width:680px;margin:0}.about-text+.about-text{margin-top:24px}.about-text strong{font-weight:600}
+.project{display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;padding:32px 0;border-top:1px solid var(--rule);text-decoration:none;color:inherit;transition:opacity .2s}.project:first-of-type{border-top:none;padding-top:0}a.project:hover{opacity:.7}.project-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}.project-name{font-size:clamp(22px,3vw,32px);font-weight:400;letter-spacing:-.01em;margin-bottom:10px}.project-desc{font-size:16px;font-weight:300;color:var(--ink-soft);line-height:1.6;max-width:600px;margin:0}.project-desc+.project-desc{margin-top:10px}.project-arrow{font-size:28px;color:var(--accent);line-height:1;margin-top:6px;transition:transform .2s}a.project:hover .project-arrow{transform:translate(4px,-4px)}.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule);padding:3px 10px;border-radius:2px}
+.job{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:24px 0;border-top:1px solid var(--rule)}.job:first-of-type{border-top:none;padding-top:0}.job-title{font-size:clamp(20px,2.6vw,26px);font-weight:400}.job-org{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}.job-date{font-family:var(--mono);font-size:11px;color:var(--ink-soft);text-align:right;white-space:nowrap}.job .project-desc{grid-column:1/-1}
 .contact-line{display:flex;align-items:center;gap:16px;font-size:clamp(18px,2.5vw,26px);font-weight:300;flex-wrap:wrap}.contact-line a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}.contact-line a:hover{border-bottom-color:var(--accent)}.contact-divider{color:var(--rule);font-weight:300}
-footer{padding:40px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}footer p{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:0}footer a{color:var(--ink-soft);text-decoration:none}footer a:hover{color:var(--accent)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}header .name{transition-delay:0s}header .roles{transition-delay:.1s}
-@media(max-width:600px){.page{padding:0 24px}header{grid-template-columns:1fr;gap:20px}.roles{text-align:left}.project{grid-template-columns:1fr}.project-arrow{display:none}footer{flex-direction:column;gap:12px;text-align:center}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.project,.project-arrow,.contact-line a{transition:none}}
+footer{padding:40px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--rule)}footer p{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:0}footer a{color:var(--ink-soft);text-decoration:none}footer a:hover{color:var(--accent)}
+html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}html.js .reveal.visible{opacity:1;transform:none}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:600px){.page{padding:0 20px}header{grid-template-columns:1fr;gap:20px}.roles{text-align:left}.project,.job{grid-template-columns:1fr}.job-date{text-align:left}.project-arrow{display:none}footer{flex-direction:column;gap:12px;text-align:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}html.js .reveal{opacity:1;transform:none;transition:none}.project,.project-arrow,.contact-line a{transition:none}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <main class="page">
 <header class="reveal">
-<div><div class="name">Catalina <em>Urizar</em></div></div>
-<div class="roles">DATA &amp; ML ENGINEER<br>BACKEND · DATA SYSTEMS<br>PYTHON · SQL · C++</div>
+<div><div class="name">Catalina <em>Urízar Kleinknecht</em></div></div>
+<div class="roles">Software Engineer<br>Simulation · Data · Automation<br>Python · C++ · SQL</div>
 </header>
 
 <section class="reveal">
 <div class="section-label">01 — Profile</div>
-<p class="about-text">I’m a <strong>Data &amp; ML Engineer</strong> with 7+ years of experience building production-oriented data and software systems.</p>
-<p class="about-text">My work sits at the intersection of <strong>data engineering, backend development, machine learning, and systems integration</strong>. I enjoy taking complex, heterogeneous problems from initial analysis through implementation, validation, deployment, and long-term maintenance.</p>
-<p class="about-text">I’m particularly comfortable in environments where requirements are incomplete, systems are heterogeneous, and the solution has to work reliably within an existing operational workflow.</p>
+<p class="about-text">I’m a <strong>software engineer</strong> with a background in <strong>Computational Engineering Science</strong> (B.Sc. RWTH Aachen, thesis graded 1.0) and 8 years of hands-on Python development alongside my studies.</p>
+<p class="about-text">My work sits at the intersection of <strong>simulation of physical systems, data engineering, backend development and systems integration</strong>. I enjoy taking complex, heterogeneous problems from initial analysis through implementation, validation and long-term maintenance, and building tools that other people can run without me.</p>
+<p class="about-text">I’m particularly comfortable where requirements are incomplete, systems are heterogeneous, and the solution has to work reliably inside an existing operational workflow.</p>
 </section>
 
 <section class="reveal">
-<div class="section-label">02 — Technical Focus</div>
+<div class="section-label">02 — Simulation &amp; Scientific Computing</div>
 
 <div class="project"><div>
-<div class="project-name">Backend &amp; Data Infrastructure</div>
-<p class="project-desc">APIs, relational databases, ORM-based applications, migrations, containerization, CI/CD, and production-oriented services.</p>
-<div class="project-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+<div class="project-meta">B.Sc. Thesis · RWTH Aachen · Graded 1.0</div>
+<div class="project-name">Aluminium distribution in zeolites</div>
+<p class="project-desc">Machine-learning-driven analysis of the aluminium distribution in zeolites (H⁺ as cation) using pretrained machine-learning potentials in automated, large-scale simulation workflows. I designed the search algorithm, a Monte Carlo / Basin Hopping scheme combining local and global swaps with local and global relaxation, and tuned its hyperparameters for result quality, convergence and running time.</p>
+<p class="project-desc">Results were validated against DFT calculations and published literature. The research group still uses the code to run further simulations for a paper in preparation.</p>
+<div class="project-tags"><span class="tag">Python</span><span class="tag">Monte Carlo</span><span class="tag">Basin Hopping</span><span class="tag">ML potentials</span><span class="tag">Validation</span></div>
 </div></div>
 
 <div class="project"><div>
-<div class="project-name">Data &amp; ML Systems</div>
-<p class="project-desc">Data processing, exploratory analysis, statistical methods, machine learning workflows, time-dependent data, validation, and production-oriented pipelines.</p>
-<div class="project-tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">NumPy</span><span class="tag">Machine Learning</span><span class="tag">Time Series</span></div>
+<div class="project-meta">Research Project · RWTH Aachen · Graded 1.0</div>
+<div class="project-name">Automated analysis of schwarzites</div>
+<p class="project-desc">An automated analysis pipeline for schwarzites (porous carbon structures): pore size distribution, radial distribution functions and stochastic ray tracing, built on RINGS, Zeo++ and OVITO and automated in Python. Still used after the project ended.</p>
+<div class="project-tags"><span class="tag">Python</span><span class="tag">Zeo++</span><span class="tag">OVITO</span><span class="tag">RINGS</span><span class="tag">Automation</span></div>
 </div></div>
 
 <div class="project"><div>
-<div class="project-name">Systems Integration &amp; Automation</div>
-<p class="project-desc">Automation and integration across modern and legacy environments, heterogeneous data sources, external services, and operational workflows.</p>
-<div class="project-tags"><span class="tag">Automation</span><span class="tag">APIs</span><span class="tag">Playwright</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">C++</span></div>
+<div class="project-meta">Follow-up Study · RWTH Aachen</div>
+<div class="project-name">Water in zeolites</div>
+<p class="project-desc">Molecular dynamics of water in Si-CHA and Si-MFI zeolites at several loadings with MACE potentials, clustered (k-medoids, Hungarian-matched RMSD) into 36 representative reference configurations for later studies in the group.</p>
+<div class="project-tags"><span class="tag">Molecular dynamics</span><span class="tag">MACE</span><span class="tag">Clustering</span><span class="tag">NumPy</span></div>
+</div></div>
+
+<div class="project"><div>
+<div class="project-meta">Software Development Lab · Institute of Aerodynamics (AIA), RWTH</div>
+<div class="project-name">C++ simulation and testing</div>
+<p class="project-desc">Unit tests in C++ for the institute’s simulation code, and a two-body orbit simulation in C++ with a 4th-order Runge–Kutta integrator. Also a numerical fluid simulation course with solvers written in C++.</p>
+<div class="project-tags"><span class="tag">C++</span><span class="tag">Unit testing</span><span class="tag">Runge–Kutta</span><span class="tag">Numerical methods</span></div>
 </div></div>
 </section>
 
 <section class="reveal">
-<div class="section-label">03 — Selected Engineering Work</div>
+<div class="section-label">03 — Experience</div>
+
+<div class="job">
+<div><div class="job-title">Technology Integration Consultant</div><div class="job-org">NFQ Advisory · Madrid · Client: Santander Spain</div></div>
+<div class="job-date">07/2026 — present</div>
+<p class="project-desc">Integration of a financial-crime screening platform in real-time and batch processing on Linux: JMS/MQ queues, Oracle WebLogic, 100+ batch jobs in Control-M, and root-cause analysis of production incidents.</p>
+</div>
+
+<div class="job">
+<div><div class="job-title">Software Developer</div><div class="job-org">fka GmbH · Automotive engineering (chassis &amp; NVH) · Aachen</div></div>
+<div class="job-date">2018 — 07/2026</div>
+<p class="project-desc">Working student throughout my studies. Built tools for engineers and test benches: a Dash application that reads, visualizes and edits test procedures and measurement signals and generates excitation signals (sinusoidal tests, frequency sweeps, chirps), an integration that generates a tire test machine’s procedures automatically (from hours to under a minute), REST APIs, data pipelines and archiving tools in use for 6+ years.</p>
+</div>
+</section>
+
+<section class="reveal">
+<div class="section-label">04 — Selected Engineering Work</div>
 
 <a class="project" href="https://github.com/catalina-urizar-kleinknecht/Personal_Finance_Dashboard" target="_blank" rel="noopener noreferrer">
 <div>
 <div class="project-meta">2026 — Full-Stack Data Application</div>
 <div class="project-name">Personal Finance Dashboard</div>
-<p class="project-desc">A production-oriented financial data application designed around a layered architecture and environment-independent database access. The system combines a Streamlit interface with SQLAlchemy, PostgreSQL, Alembic migrations, Google OIDC authentication, and cloud deployment.</p>
-<div class="project-tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">Streamlit</span><span class="tag">OIDC</span><span class="tag">Cloud</span></div>
+<p class="project-desc">A financial data application built around a layered architecture and environment-independent database access. It combines a Streamlit interface with SQLAlchemy, PostgreSQL, Alembic migrations, Google OIDC authentication and cloud deployment.</p>
+<div class="project-tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">Streamlit</span><span class="tag">OIDC</span></div>
 </div><div class="project-arrow">↗</div>
 </a>
 
 <a class="project" href="https://catalina-urizar-kleinknecht.github.io/ojv-agil-site" target="_blank" rel="noopener noreferrer">
 <div>
-<div class="project-meta">2026 — Automation &amp; Systems Integration</div>
+<div class="project-meta">In daily use for 4+ years — Automation &amp; Systems Integration</div>
 <div class="project-name">OJV Ágil</div>
-<p class="project-desc">A Windows desktop automation system built to streamline repetitive legal-information workflows. It automates large-scale searches against the Chilean Oficina Judicial Virtual, processes and validates results, exports structured datasets to Excel, and identifies changes between executions.</p>
-<div class="project-tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">Pandas</span><span class="tag">CustomTkinter</span><span class="tag">Automation</span><span class="tag">Windows</span></div>
+<p class="project-desc">A Windows desktop automation tool for a law firm. It automates large-scale searches on the Chilean Oficina Judicial Virtual, processes and validates the results, exports structured datasets to Excel and flags changes between runs.</p>
+<div class="project-tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">pandas</span><span class="tag">CustomTkinter</span><span class="tag">Windows</span></div>
 </div><div class="project-arrow">↗</div>
 </a>
 
 <a class="project" href="https://github.com/catalina-urizar-kleinknecht/mdb-bridge" target="_blank" rel="noopener noreferrer">
 <div>
-<div class="project-meta">2026 — Open-Source · Data Tooling</div>
+<div class="project-meta">2026 — Open Source · Data Tooling</div>
 <div class="project-name">mdb-bridge</div>
-<p class="project-desc">An open-source, Linux-native library for reading legacy Microsoft Access databases without Microsoft Access or Windows ODBC drivers. It layers Python over UCanAccess through JDBC, automates the Java dependency resolution with Maven, and lays the groundwork for forensic inspection tooling over legacy .mdb/.accdb files.</p>
-<div class="project-tags"><span class="tag">Open Source</span><span class="tag">Python</span><span class="tag">JDBC</span><span class="tag">UCanAccess</span><span class="tag">Java</span><span class="tag">Maven</span><span class="tag">Linux</span></div>
+<p class="project-desc">An open-source, Linux-native library for reading legacy Microsoft Access databases without Microsoft Access or Windows ODBC drivers. It layers Python over UCanAccess through JDBC and automates the Java dependency resolution with Maven.</p>
+<div class="project-tags"><span class="tag">Open source</span><span class="tag">Python</span><span class="tag">JDBC</span><span class="tag">UCanAccess</span><span class="tag">Maven</span><span class="tag">Linux</span></div>
 </div><div class="project-arrow">↗</div>
 </a>
 </section>
 
 <section class="reveal">
-<div class="section-label">04 — Engineering Approach</div>
-<p class="about-text">I value <strong>maintainability over unnecessary complexity</strong>. I prefer clear boundaries between data access, business logic, and presentation, and I design systems so that infrastructure decisions can evolve without rewriting the application.</p>
-<p class="about-text">My approach emphasizes <strong>validation, reproducibility, observability, automation, and pragmatic architecture</strong> — especially when working with existing systems or imperfect data.</p>
-</section>
-
-<section class="reveal">
-<div class="section-label">05 — Currently</div>
-<p class="about-text">Working across <strong>data engineering, machine learning, backend systems, and automation</strong>, with a particular interest in building reliable systems that connect analytical work with real operational processes.</p>
+<div class="section-label">05 — Engineering Approach</div>
+<p class="about-text">I value <strong>maintainability over unnecessary complexity</strong>. I prefer clear boundaries between data access, business logic and presentation, and I design systems so that infrastructure decisions can evolve without rewriting the application.</p>
+<p class="about-text">My approach emphasizes <strong>validation, reproducibility, testing and pragmatic architecture</strong>, especially when working with existing systems, physical models or imperfect data.</p>
 </section>
 
 <section class="reveal">
 <div class="section-label">06 — Contact</div>
 <div class="contact-line">
-<a href="mailto:YOUR_EMAIL@example.com">Email</a><span class="contact-divider">/</span>
+<a href="mailto:catalina.urizark@gmail.com">catalina.urizark@gmail.com</a><span class="contact-divider">/</span>
 <a href="https://github.com/catalina-urizar-kleinknecht" target="_blank" rel="noopener noreferrer">GitHub</a><span class="contact-divider">/</span>
 <a href="https://www.linkedin.com/in/catalina-ignacia-ur%C3%ADzar-kleinknecht-832605386/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 </div>
 </section>
 
 <footer>
-<p>© 2026 Catalina Urizar</p>
+<p>© 2026 Catalina Urízar Kleinknecht</p>
 <p><a href="https://github.com/catalina-urizar-kleinknecht" target="_blank" rel="noopener noreferrer">GitHub</a></p>
 </footer>
 </main>
@@ -125,4 +150,3 @@ reveals.forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
-"""
